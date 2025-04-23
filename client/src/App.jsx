@@ -2,6 +2,8 @@ import { Routes,Route,Navigate, BrowserRouter} from "react-router-dom";
 import Login from "./pages/login";
 import AdminDashboard from "./pages/adminDashboard";
 import EmployeeDashboard from "./pages/employeeDashboard";
+import PrivateRoutes from "./utils/privateRoutes";
+import RoleBaseRoutes from "./utils/RoleBaseRoutes";
 function App() {
  
 

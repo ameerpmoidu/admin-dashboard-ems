@@ -1,9 +1,9 @@
 import React from 'react'
-import useAuth from '../context/authContext'
+import {useAuth} from '../context/authContext'
 
 
 const adminDashboard = () => {
-       const {user,loading} = useAuth ()
+       const {user,loading} = useAuth()
        
 
 
