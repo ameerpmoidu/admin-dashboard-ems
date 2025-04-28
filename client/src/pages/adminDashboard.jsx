@@ -1,18 +1,22 @@
 import React from 'react'
 import {useAuth} from '../context/authContext'
 import AdminSidebar from '../components/dashboard/AdminSidebar'
+import Navbar from '../components/Navbar'
+import AdminSummary from '../components/AdminSummary'
 
-const adminDashboard = () => {
+
+const AdminDashboard = () => {
        const {user,loading} = useAuth()
        
-
-
-
-  return (
-    <div>
+return (
+    <div className='flex'>
     <AdminSidebar />
+    <div className='flex-1 ml-64 bg-gray-100 h-screen'>
+      <Navbar/>
+      <AdminSummary/>
+    </div>
     </div>
   )
 }
 
-export default adminDashboard
+export default AdminDashboard
