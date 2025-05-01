@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import User from "../models/user.js"
+import User from "../models/User.js"
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import bcrypt from 'bcrypt'

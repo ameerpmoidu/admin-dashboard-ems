@@ -16,7 +16,9 @@ const handleChange = (e) =>{
 const handleSubmit = async (e) =>{
   e.preventDefault()
   try{
-     const response = await axios.post('http://localhost:5000/api/department/add', department,{
+    console.log(department,"department");
+    
+     const response = await axios.post('http://localhost:3000/api/department/add', department,{
       headers: {
         "authorization":`bearer ${localStorage.getItem('token')}`
 
@@ -28,7 +30,7 @@ const handleSubmit = async (e) =>{
 
   }catch(error) {
     if(error.response && !error.response.data.success){
-      alert(error.resonse.data.error)
+      alert(error.response.data.error)
     }
   }
 }

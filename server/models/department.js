@@ -6,3 +6,6 @@ const departmentSchema = new mongoose.Schema({
     createdAt: {type:Date, default: Date.now},
     upatedAt: {type: Date, default :Date.now}
 })
+
+const Department = mongoose.model("Department",departmentSchema)
+export default Department
