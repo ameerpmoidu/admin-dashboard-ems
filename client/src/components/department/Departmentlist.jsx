@@ -4,6 +4,7 @@ import DataTable from 'react-data-table-component'
 import {columns,DepartmentButtons} from "../../utils/DepartmentHelpers"
 import axios from 'axios';
 
+
 const Departmentlist = () => {
   const [departments,setDepartments]= useState ([])
   const [depLoading,setDepLoading] =useState(false)
@@ -12,19 +13,21 @@ useEffect(() => {
   const fetchDepartments =async () => {
     setDepLoading(true)
     try {
-      const responnse = await axios.get('http://localhost:5000/api/department',{
+      const responnse = await axios.get('http://localhost:3000/api/department',{
         headers: {
           Authorization : `Bearer ${localStorage.getItem('token')}`,
         },
       })
       if(responnse.data.success) {
+        let sno = 1;
+        console.log(responnse.data)
         const data = await responnse.data.departments.map((dep) => (
        {
         _id:dep._id,
         sno:sno++,
         dep_name:dep.dep_name,
-        action: (<DepartmentButtons/>)
-       }));
+        action: (<DepartmentButtons Id={dep._d}/>),
+}));
        setDepartments(data);
       }
     }catch(error) {
@@ -53,7 +56,7 @@ useEffect(() => {
             Add New Department
             </Link>
       </div>
-      <div>
+      <div className='mt-5'>
         <DataTable
          columns={columns} data ={departments}/>
                </div>
