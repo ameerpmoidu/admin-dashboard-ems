@@ -31,8 +31,10 @@ useEffect(() => {
        setDepartments(data);
       }
     }catch(error) {
+      console.log(error,"error");
+      
       if(error.response && !error.response.data.success){
-        alert(error.response.data.error)
+        // alert(error.response.data.error)
       }
     } finally{
       setDepLoading(false)

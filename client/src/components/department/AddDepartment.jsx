@@ -30,7 +30,7 @@ const handleSubmit = async (e) =>{
 
   }catch(error) {
     if(error.response && !error.response.data.success){
-      alert(error.response.data.error)
+      // alert(error.response.data.error)
     }
   }
 }
